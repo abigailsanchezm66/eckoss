@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - UniVox</title>
+</head>
+<link rel="stylesheet" href="..//css/estilo.css">
+<body>
+    <header>
+       
+        <nav>
+              <div style="display: inline-block; position: relative;">
+                <a href="..//Paginashtmk/inicio.html" id="btn-inicio">Inicio</a>
+                <div id="menu-inicio" style="display: none; position: absolute; left: 0; background: white; border: 1px solid #ccc; padding: 5px; flex-direction: column; gap: 5px; z-index: 10; min-width: 120px;">
+                </div>
+            </div>
+
+              <div style="display: inline-block; position: relative;">
+                <a href="..//Paginashtmk/preguntas.html" id="btn-inicio">Preguntas</a>
+                <div id="menu-inicio" style="display: none; position: absolute; left: 0; background: white; border: 1px solid #ccc; padding: 5px; flex-direction: column; gap: 5px; z-index: 10; min-width: 120px;">
+                </div>
+
+                  <div style="display: inline-block; position: relative;">
+                <a href="..//Paginashtmk/servicios.html" id="btn-inicio">Servicios</a>
+                <div id="menu-inicio" style="display: none; position: absolute; left: 0; background: white; border: 1px solid #ccc; padding: 5px; flex-direction: column; gap: 5px; z-index: 10; min-width: 120px;">
+                </div>
+
+                  <div style="display: inline-block; position: relative;">
+                <a href="inicio_sesion.html" id="btn-inicio">Inicio De Sesion</a>
+                <div id="menu-inicio" style="display: none; position: absolute; left: 0; background: white; border: 1px solid #ccc; padding: 5px; flex-direction: column; gap: 5px; z-index: 10; min-width: 120px;">
+                </div>
+
+                   <div style="display: inline-block; position: relative;">
+                <a href="registro.html" id="btn-inicio">Registro</a>
+                <div id="menu-inicio" style="display: none; position: absolute; left: 0; background: white; border: 1px solid #ccc; padding: 5px; flex-direction: column; gap: 5px; z-index: 10; min-width: 120px;">
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1 class="main-title">UniVox</h1>
+        <p class="main-subtitle">"La voz del mundo"</p>
+
+        <div class="register-card">
+            <h2 class="register-title">Registrarse</h2>
+            
+           
+            <form action="../conexionesPhp/alta.php" method="POST">
+
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre"required>
+                </div>
+
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido"required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dni">DNI</label>
+                    <input type="text" id="dni" name="dni"required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Establecer email</label>
+                    <input type="text" id="email" name="email"required>
+                </div>
+
+                  <div class="form-group">
+                    <label for="clave">Establecer contraseña</label>
+                    <input type="text" id="clave" name="clave"required>
+                </div>
+
+
+                <button type="submit" class="btn-submit">Registrarse</button>
+                  <a href="..//Paginashtmk/inicio.html" id="btn-inicio">Volver A Inicio</a>
+            </form>
+        </div>
+    </main>
+
+    <script src="cuenta.js"></script>
+</body>

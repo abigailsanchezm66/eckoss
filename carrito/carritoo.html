@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniVox - Carrito</title>
+</head>
+<link rel="stylesheet" href="..//css/estilo.css">
+<body>
+    <header>
+        <nav>
+            <a href="../Paginashtmk/inicio.html">Inicio</a>
+            <a href="../Paginashtmk/preguntas.html">Preguntas</a>
+            <a href="../Paginashtmk/servicios.html">Servicios</a>
+            <a href="../inicios.registro/inicio_sesion.html">Inicio De Sesion</a>
+            <a href="../inicios.registro/registro.html">Registro</a>
+            <a href="carrito.html">Carrito</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Carrito de Compras</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody id="carrito-items">
+
+                </tbody>
+            </table>
+
+            <div>
+                <h4>Total: $<span id="total">0</span></h4>
+            </div>
+
+            <div>
+                <button id="limpiar-carrito">Cancelar compra</button>
+                <button id="finalizar-compra">Finalizar Compra</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>UniVox - La voz del mundo</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="carrito.js"></script>
+    <script src="../inicios.registro/cuenta.js"></script>
+</body>
+</html>

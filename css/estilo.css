@@ -1,0 +1,559 @@
+/* ==========================================================
+   UniVox - Hoja de estilos única
+   Ubicación: css/estilos.css
+   Enlazar en cada página con:
+   <link rel="stylesheet" href="../css/estilos.css">
+   ========================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800&display=swap");
+
+:root {
+  --fondo: #00133a;
+  --header: #0a3fb0;
+  --pill: #2a78d6;
+  --tarjeta: #0a3a48;
+  --tarjeta-oscura: #08303c;
+  --tarjeta-azul: #0b64b4;
+  --acento: #15a08c;
+  --acento-hover: #1cc3ab;
+  --verde: #12c24a;
+  --texto: #ffffff;
+  --texto-suave: #cfe3ee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: "Mulish", "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* ---------------------------------------------------------
+   HEADER / NAVEGACIÓN
+   --------------------------------------------------------- */
+header {
+  background: var(--header);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding: 8px 16px;
+  border-bottom: 2px solid #0a2f86;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* Logo de texto (el HTML no tiene imagen de logo) */
+header::before {
+  content: "UniVox";
+  order: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  padding-left: 38px;
+  line-height: 32px;
+  background:
+    linear-gradient(135deg, #29d3ff 0 33%, #ffd23f 33% 66%, #ff4d6d 66% 100%) no-repeat left center / 30px 30px;
+  border-radius: 6px;
+}
+
+/* El div vacío del header de inicio/preguntas/servicios no se usa */
+header > div:empty {
+  display: none;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-left: auto;
+}
+
+/* Los contenedores inline-block se vuelven flexibles */
+nav > div {
+  display: inline-flex !important;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+nav a {
+  display: inline-block;
+  background: var(--pill);
+  color: var(--texto);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 5px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: background 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+nav a:hover {
+  background: #4392f0;
+  transform: translateY(-1px);
+}
+
+/* ---------------------------------------------------------
+   CONTENIDO PRINCIPAL
+   --------------------------------------------------------- */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 14px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.1rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 8px;
+}
+
+a {
+  color: #7fd6ff;
+}
+
+/* Bloque de título (primera sección): sin tarjeta, centrado */
+main > section:first-child {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  text-align: center;
+}
+
+main > section:first-child h1,
+main > section:first-child h2 {
+  text-align: center;
+}
+
+main > section:first-child > p {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--texto-suave);
+}
+
+/* Tarjetas */
+main > section {
+  background: var(--tarjeta);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  font-size: 0.85rem;
+}
+
+main > section > h2 {
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+main > section > h2 + p {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+
+/* Registro: título principal suelto en main */
+main > .main-title {
+  margin-top: 6px;
+}
+
+.main-subtitle {
+  text-align: center;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--texto-suave);
+  margin: -8px 0 4px;
+}
+
+/* ---------------------------------------------------------
+   INICIO: Sobre nosotros / Nuestro trabajo
+   --------------------------------------------------------- */
+article {
+  margin: 0;
+}
+
+article > h3 {
+  color: var(--texto);
+}
+
+article > p {
+  color: var(--texto-suave);
+  font-size: 0.8rem;
+}
+
+/* Preguntas / reseñas / trabajos: separador entre artículos */
+article + article {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+article img {
+  float: left;
+  width: 90px;
+  height: auto;
+  max-height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0 12px 6px 0;
+}
+
+article::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ---------------------------------------------------------
+   SERVICIOS: packs
+   --------------------------------------------------------- */
+main > section:has(> article > ul) {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+main > section:has(> article > ul) > h1 {
+  margin-bottom: 0;
+}
+
+main > section:has(> article > ul) > h2 {
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+article:has(> ul) {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 12px;
+  background: var(--tarjeta);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  border-top: none;
+  margin-top: 0;
+}
+
+article:has(> ul) > h3,
+article:has(> ul) > ul {
+  grid-column: 1 / -1;
+}
+
+article:has(> ul) > h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+article:has(> ul) > ul {
+  margin: 0 0 14px;
+  padding-left: 16px;
+  font-size: 0.78rem;
+  color: var(--texto-suave);
+}
+
+article:has(> ul) > ul li {
+  margin-bottom: 2px;
+}
+
+article:has(> ul) > p {
+  margin: 0;
+}
+
+article:has(> ul) > p strong {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--texto);
+}
+
+/* ---------------------------------------------------------
+   BOTONES
+   --------------------------------------------------------- */
+button,
+.btn-contratar,
+.btn-submit {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  color: var(--texto);
+  font-weight: 700;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-contratar {
+  background: var(--acento);
+  font-size: 0.75rem;
+  padding: 8px 14px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.btn-contratar:hover {
+  background: var(--acento-hover);
+  transform: translateY(-1px);
+}
+
+/* ---------------------------------------------------------
+   FORMULARIOS: Registro e Inicio de sesión
+   --------------------------------------------------------- */
+.register-card,
+.login-card {
+  background: var(--tarjeta-azul);
+  border-radius: 16px;
+  padding: 18px 22px 20px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+/* En inicio_sesion.html la tarjeta es un <section> dentro de main */
+main > section.login-card {
+  background: var(--tarjeta-azul);
+  padding: 18px 22px 20px;
+  text-align: left;
+}
+
+.register-title,
+.login-card > h2,
+.register-card > h2 {
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.form-group label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-align: center;
+  color: #e6f1ff;
+}
+
+.form-group input {
+  width: 100%;
+  height: 26px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 999px;
+  background: #f1f1f1;
+  color: #111;
+  font-family: inherit;
+  font-size: 0.8rem;
+  outline: none;
+}
+
+.form-group input:focus {
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(127, 214, 255, 0.6);
+}
+
+#btn-iniciar,
+.btn-submit {
+  align-self: center;
+  background: var(--verde);
+  padding: 6px 26px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+#btn-iniciar:hover,
+.btn-submit:hover {
+  background: #22e05c;
+  transform: translateY(-1px);
+}
+
+/* Enlace "Volver A Inicio" dentro del formulario de registro */
+form > a#btn-inicio {
+  align-self: center;
+  font-size: 0.75rem;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.login-card > p {
+  text-align: center;
+  font-size: 0.75rem;
+  margin: 12px 0 0;
+}
+
+/* ---------------------------------------------------------
+   CARRITO
+   --------------------------------------------------------- */
+main > section:has(> table) {
+  background: var(--tarjeta);
+  padding: 16px;
+  text-align: left;
+}
+
+main > section:has(> table) > h2 {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  background: var(--tarjeta-oscura);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead th {
+  background: var(--tarjeta-azul);
+  text-align: left;
+  padding: 10px 12px;
+  font-weight: 700;
+}
+
+tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+section > div > h4 {
+  margin: 16px 0 12px;
+  text-align: right;
+  font-size: 1.1rem;
+}
+
+section > div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+#limpiar-carrito,
+#finalizar-compra {
+  padding: 9px 18px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+}
+
+#limpiar-carrito {
+  background: #8a2b3a;
+}
+
+#limpiar-carrito:hover {
+  background: #b13a4d;
+}
+
+#finalizar-compra {
+  background: var(--acento);
+}
+
+#finalizar-compra:hover {
+  background: var(--acento-hover);
+}
+
+/* ---------------------------------------------------------
+   FOOTER
+   --------------------------------------------------------- */
+footer {
+  background: var(--header);
+  text-align: center;
+  padding: 12px 16px;
+  font-size: 0.8rem;
+  border-top: 2px solid #0a2f86;
+  margin-top: auto;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+@media (max-width: 600px) {
+  header {
+    justify-content: center;
+  }
+
+  nav {
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  article img {
+    width: 70px;
+  }
+
+  article:has(> ul) {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+  }
+
+  article:has(> ul) > .btn-contratar {
+    justify-self: stretch;
+  }
+}
